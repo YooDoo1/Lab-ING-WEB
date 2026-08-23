@@ -1,0 +1,275 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: #222222;
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.contenedor {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    color: #123b70;
+    line-height: 1.2;
+}
+
+h1 {
+    margin-bottom: 0;
+    font-size: 2.35rem;
+}
+
+h2 {
+    margin-bottom: 12px;
+    font-size: 1.55rem;
+}
+
+h3 {
+    margin-bottom: 14px;
+    font-size: 1.45rem;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Encabezado y navegación */
+.encabezado-sitio h1 {
+    padding: 30px 0;
+}
+
+.menu-principal {
+    background-color: #0b4f91;
+}
+
+.menu-principal ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 32px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-principal a {
+    display: block;
+    padding: 15px 8px 12px;
+    border-bottom: 3px solid transparent;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu-principal a:hover,
+.menu-principal a:focus {
+    background-color: #10447a;
+}
+
+.menu-principal a[aria-current="page"] {
+    border-bottom-color: #ffffff;
+    font-weight: bold;
+}
+
+/* Contenido de la página principal */
+.contenido-principal {
+    flex: 1;
+    padding-top: 38px;
+    padding-bottom: 42px;
+}
+
+.bienvenida {
+    margin-bottom: 34px;
+}
+
+.equipo > h2 {
+    margin-bottom: 18px;
+}
+
+.tarjetas-equipo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.tarjeta-integrante {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 24px;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #c7ced6;
+    border-radius: 8px;
+}
+
+.tarjeta-integrante > img {
+    width: 190px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.datos-integrante p {
+    margin-bottom: 22px;
+}
+
+.enlace-biografia {
+    display: inline-block;
+    padding: 9px 18px;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #0b4f91;
+    text-decoration: none;
+}
+
+.enlace-biografia:hover,
+.enlace-biografia:focus {
+    background-color: #083c70;
+}
+
+/* Páginas de biografía */
+.biografia {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.seccion-biografia {
+    padding: 22px 20px;
+    border-bottom: 1px solid #c7ced6;
+}
+
+.seccion-biografia:first-child {
+    padding-top: 0;
+}
+
+.seccion-biografia:last-child {
+    border-bottom: 0;
+}
+
+.presentacion p {
+    max-width: 760px;
+}
+
+.seccion-con-imagen {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 42px;
+    align-items: center;
+}
+
+.seccion-con-imagen > * {
+    min-width: 0;
+}
+
+.imagen-tematica {
+    margin: 0;
+}
+
+.imagen-tematica img {
+    width: 320px;
+    height: 185px;
+    object-fit: cover;
+    border: 1px solid #bcc5ce;
+    border-radius: 6px;
+}
+
+.lista-intereses {
+    margin: 8px 0 0;
+    padding-left: 28px;
+}
+
+.metas {
+    padding-bottom: 0;
+}
+
+/* Pie de página */
+.pie-sitio {
+    padding: 20px 24px;
+    border-top: 1px solid #c7ced6;
+    color: #273646;
+    background-color: #eef3f8;
+    text-align: center;
+}
+
+.pie-sitio p {
+    margin: 0;
+}
+
+/* Ajustes básicos para pantallas pequeñas */
+@media (max-width: 850px) {
+    .tarjetas-equipo {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion-con-imagen {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .imagen-tematica img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    body {
+        font-size: 16px;
+    }
+
+    .contenedor {
+        width: calc(100% - 28px);
+    }
+
+    h1 {
+        font-size: 1.85rem;
+    }
+
+    .encabezado-sitio h1 {
+        padding: 24px 0;
+    }
+
+    .menu-principal ul {
+        display: block;
+    }
+
+    .menu-principal a {
+        padding: 11px 8px 8px;
+    }
+
+    .contenido-principal {
+        padding-top: 28px;
+    }
+
+    .tarjeta-integrante {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-integrante > img {
+        width: 100%;
+        height: auto;
+    }
+
+    .seccion-biografia {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
